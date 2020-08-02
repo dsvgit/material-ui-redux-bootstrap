@@ -24,7 +24,7 @@ export default function App() {
   return (
     <ReduxProvider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <FetchProvider url={config.API_HOST} options={fetchOptions}>
+        <FetchProvider url={config.API_HOST}>
           <Routing />
         </FetchProvider>
       </PersistGate>
