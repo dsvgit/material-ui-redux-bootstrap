@@ -13,8 +13,8 @@ function FilmsList() {
 
   return (
     <List>
-      {data.results.map(film => (
-        <ListItem>
+      {data.results.map((film, i) => (
+        <ListItem key={i}>
           <ListItemText primary={film.title} />
         </ListItem>
       ))}
@@ -22,7 +22,7 @@ function FilmsList() {
   );
 }
 
-function DashboardPage() {
+export const DashboardPage = function() {
   return (
     <AppLayout>
       <Typography>This is my dashboard</Typography>
@@ -30,5 +30,3 @@ function DashboardPage() {
     </AppLayout>
   );
 }
-
-export default DashboardPage;

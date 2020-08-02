@@ -6,7 +6,7 @@ import { selectors } from "../services/auth";
 
 import SignInPage from "./SignInPage";
 
-import DashboardPage from "./DashboardPage";
+import {DashboardPage} from "./DashboardPage";
 
 function LoginRouting() {
   return (

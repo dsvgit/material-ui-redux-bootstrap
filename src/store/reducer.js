@@ -12,6 +12,7 @@ const combinedRootReducer = combineReducers({
 function rootReducer(state, action) {
   if (action.type === authActions.logout.toString()) {
     state = undefined;
+    localStorage.removeItem('persist:auth');
   }
 
   return combinedRootReducer(state, action);
