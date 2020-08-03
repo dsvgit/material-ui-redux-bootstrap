@@ -2,11 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { selectors } from "../services/auth";
+import { selectors } from "services/auth";
 
+import Sidebar from "components/Sidebar";
 import SignInPage from "./SignInPage";
-
-import {DashboardPage} from "./DashboardPage";
+import DashboardPage from "./DashboardPage";
+import SchedulePage from  './SchedulePage'
 
 function LoginRouting() {
   return (
@@ -21,9 +22,14 @@ function LoginRouting() {
 function AppRouting() {
   return (
     <Switch>
-      <Route path="/">
-        <DashboardPage />
-      </Route>
+      <Sidebar>
+        <Route path="/">
+          <DashboardPage />
+        </Route>
+        <Route path="/schedule">
+          <SchedulePage />
+        </Route>
+      </Sidebar>
     </Switch>
   );
 }

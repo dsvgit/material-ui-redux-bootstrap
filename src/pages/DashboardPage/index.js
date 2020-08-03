@@ -2,8 +2,6 @@ import React from "react";
 import { Typography, List, ListItem, ListItemText } from "@material-ui/core";
 import useFetch from "use-http";
 
-import AppLayout from "../../components/AppLayout";
-
 function FilmsList() {
   const { data, loading } = useFetch("/films/", {}, []);
 
@@ -22,11 +20,11 @@ function FilmsList() {
   );
 }
 
-export const DashboardPage = function() {
+export default function DashboardPage() {
   return (
-    <AppLayout>
+    <div>
       <Typography>This is my dashboard</Typography>
       <FilmsList />
-    </AppLayout>
+    </div>
   );
 }
